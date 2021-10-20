@@ -39,7 +39,7 @@ public class QAConcortPage {
     @FindBy(partialLinkText = "Hotel List")
     public WebElement hotelListLink;
 
-    @FindBy(xpath = "//span[text()='Add Hotel']")
+    @FindBy(xpath ="//span[text()='Add Hotel ']")
     public WebElement addHotelLink;
 
     @FindBy(id = "Code")

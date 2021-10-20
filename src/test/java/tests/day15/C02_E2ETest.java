@@ -10,7 +10,7 @@ import utilities.Driver;
 
 public class C02_E2ETest {
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
 
         //1. Tests packagenin altına class olusturun: D17_CreateHotel
         //2. Bir metod olusturun: createHotel
@@ -23,7 +23,9 @@ public class C02_E2ETest {
         //5. Login butonuna tıklayın.
         //6. Hotel Management/Hotel List menusunden ADD HOTEL butonuna tiklayin
         qaConcortPage.hotelManagementLinki.click();
+        Thread.sleep(1000);
         qaConcortPage.hotelListLink.click();
+        Thread.sleep(1000);
         qaConcortPage.addHotelLink.click();
         //7. Açılan sayfadaki tüm metin kutularına istediğiniz verileri girin.
         Actions actions=new Actions(Driver.getDriver());
@@ -39,9 +41,6 @@ public class C02_E2ETest {
                 .sendKeys(faker.phoneNumber().phoneNumber())
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.internet().emailAddress())
-                .sendKeys(Keys.TAB)
-
-                .sendKeys(Keys.TAB)
                 .perform();
         //8. Save butonuna tıklayın.
         //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
