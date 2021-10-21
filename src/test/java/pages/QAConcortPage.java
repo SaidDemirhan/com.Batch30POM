@@ -4,11 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.List;
+
 public class QAConcortPage {
-    public WebDriver driver;
+
 
     public QAConcortPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -44,6 +47,55 @@ public class QAConcortPage {
 
     @FindBy(id = "Code")
     public WebElement addHotelCodeKutusu;
+
+    @FindBy(partialLinkText ="Hotel Rooms")
+    public WebElement hotelRoomsLinki;
+
+    @FindBy(xpath = "//span[text()='Add Hotelroom ']")
+    public WebElement addHotelLinkButonu;
+
+    @FindBy(id ="IDHotel")
+    public WebElement addRoom;
+
+    @FindBy(id = "IDGroupRoomType")
+    public WebElement addRoomType;
+
+    @FindBy(id="IDGroup")
+    public WebElement addHotelDropdown;
+
+    @FindBy (id ="btnSubmit" )
+    public WebElement addRoomSaveButonu;
+
+    @FindBy (xpath = "//div[class='bootbox-body']")
+    public WebElement addRoomSuccesfullYazisi;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement addRoomAllertOkButonu;
+
+    @FindBy (linkText = "Hotelrooms")
+    public WebElement addroomHotelRooms;
+
+    @FindBy(linkText = "Hotelrooms")
+    public WebElement addroomHotelRoomsLinki;
+
+    @FindBy(xpath ="//span[text()='List Of Hotelrooms']")
+    public WebElement addRoomHotelListyazisi;
+
+    @FindBy(xpath = "//thead/tr[1]/th")
+    public List<WebElement> basliklarListesi;
+
+    @FindBy(xpath = "//tbody")
+    public WebElement tBodyTumu;
+
+    @FindBy(xpath = "//tbody//tr")
+    public List<WebElement> satirlarListesi;
+
+    @FindBy(xpath = "//tbody//tr[1]")
+    public WebElement birinciSatir;
+
+    @FindBy(xpath = "//tbody/tr//td[4]")
+    public List<WebElement> dorduncuSutunListesi;
+
 
     public void QAConcortHotelLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));

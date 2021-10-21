@@ -43,6 +43,7 @@ public class C02_E2ETest {
                 .sendKeys(faker.internet().emailAddress())
                 .perform();
         //8. Save butonuna tıklayın.
+
         //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
         //10. OK butonuna tıklayın.
 
