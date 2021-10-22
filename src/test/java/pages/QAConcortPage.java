@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -107,5 +108,22 @@ public class QAConcortPage {
 
 }
 
+    public String printData(int satir, int sutun) {
+        //örnekteki haliyle 5.satir 3. sütundaki elemani yazdiralim
+        //degismeyecek kisimlari string
+        //degisecek kisimlari da parametre ismi olarak yazdik
+
+       String xpath ="//tbody//tr["+satir+"]//td["+sutun+"]";
+
+        //System.out.println("satir: "+satir+"sütun: "+sutun);
+
+        //@FindBy notasyonu parametrelicalismadigi icin önceki yöntemle
+        //locate edelim.
+
+        String istenenData= Driver.getDriver().findElement(By.xpath(xpath)).getText();
+        System.out.println("satir: "+satir+" sütun: "+sutun+"'deki istenen data");
+
+        return istenenData;
+    }
 }
 
