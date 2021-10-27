@@ -19,7 +19,7 @@ public class NeativeTest {
 
     QAConcortPage qaConcortPage;
 
-    @Test(priority = -5)
+    @Test(priority = -5 , groups = "birinciGrup")
     public void yanlisSifreTesti(){
         Driver.getDriver().get(ConfigReader.getProperty("CHQAUrl"));
 
@@ -42,7 +42,7 @@ public class NeativeTest {
         Assert.assertTrue(qaConcortPage.loginFaildYazisi.isDisplayed());
     }
 
-    @Test(dependsOnMethods = "yanlisSifreTesti")
+    @Test(dependsOnMethods = "yanlisSifreTesti", groups = "birinciGrup")
     public void yanlisSifreKullanici(){
         qaConcortPage=new QAConcortPage();
         qaConcortPage.usernameKutusu.clear();
