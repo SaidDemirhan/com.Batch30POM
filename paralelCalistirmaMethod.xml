@@ -1,5 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="paralel class calistirma" parallel="classes" thread-count="4" verbose="3">
+<suite name="paralel class calistirma" parallel="methods" thread-count="2" verbose="3">
+    <!-- Paralel calismada calisacak testlerin secimi ile drivar lar arasinda görev bolusumunun hangi seviyede
+    olacagi konusundaki secimin bir bagi yoktur.
+
+    Caluisacak dosyalarin karismamasi icin olabildigince ayrimi test ,package gibi toparlayici sekilde
+    yapmak tavsiye edilir.
+    -->
+
     <test name="paralel calisma 1">
         <classes>
             <class name="tests.day13.C02_PagesFacebook"></class>
