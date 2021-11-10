@@ -29,7 +29,7 @@ public class C02_WebTable {
         // Bu yklasim, tabloda HAPPY HOTEL var mi gibi sorular icin ideal bir cozum olur
         System.out.println(qaConcortPage.tBodyTumu.getText());
         Thread.sleep(1000);
-        Assert.assertTrue(qaConcortPage.tBodyTumu.getText().contains("HAPPY HOTEL"));
+        Assert.assertFalse(qaConcortPage.tBodyTumu.getText().contains("HAPPY HOTEL"));
 
         for (WebElement each: qaConcortPage.basliklarListesi
         ) {
